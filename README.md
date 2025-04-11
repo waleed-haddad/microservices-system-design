@@ -9,20 +9,6 @@ This project is a WORK IN PROGRESS. I am using it to teach myself the fundamenta
   
     ![image.png](images/image.png)
     
-- Key Terms
-    - Synchronous Interservice Communication - client service sending a request awaits the response of the server, it cannot perform other tasks while waiting
-        - such a request is called a blocking request, eg: our authentication service
-    - Asynchronous Interservice Communication - client service does not need to wait for a response, we achieve this via messages on a queue (RabbitMQ)
-    - Strong Consistency - data is always consistent between user, services, and databases
-    - Eventual Consistency - data is eventually consistent between user, services, and databases (eg: our user has to wait a couple of minutes before retreiving their file)
-    - Competing Consumers Pattern - to scale, a producer of messages in a queue can have multiple consumers, which increase speed of working through the messages producing output
-    - Deployment (in kubernetes) - manages the deployment and scaling of a set of pods which have identical container spec
-      
-        ![image.png](images/image%201.png)
-        
-        - Stateful Set - similar to deployment but each pod has its own unique identifier which it maintains between scaling/rescheudling etc
-            - if a pod fails, its respective volume can be matched to it with the unique id, ensuring data is not lost
-
 ## Setup
 
 - Installed the following applications:
